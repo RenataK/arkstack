@@ -1,0 +1,28 @@
+extends layout.pug
+
+block content
+
+  article.portfolio-intro
+
+    //- Heading
+    h1 Hello World
+
+    //- Description of portfolio
+    p These projects demonstrate fundamental JavaScript skills such as, building a simple random quote generator, pagination, adding customized and conditional behavior and interactivity, validating user input and providing helpful error messages, understanding OOP, communicating with APIs to build useful tools and relevant information quickly and easily, as well as working with Express and Node.js to set up routes and middleware, handling errors and setting up a server to serve this site.
+
+
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+
+      //- Using pugs `each` iterator to loop over the projects in the data file
+      each project in projects  
+      
+        //- Dynamically generating:
+          //- The paths in the link's href and img's src attributes
+          //- The text 'Thumbnail' interpolated with the project title for the img's alt attribute
+          //- The project title for the h5 element's text
+
+        .cell
+          a(href=`/projects/${project.id}`)
+            img.thumbnail(src=`${project.image_urls[0]}`, alt='main_image')
+            h5= project.project_name

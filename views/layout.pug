@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="en" dir="ltr")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Portfolio Site
+    link(href='https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,800', rel='stylesheet')
+    link(rel='stylesheet', href='/static/css/normalize.css')
+    link(rel='stylesheet', href='/static/css/styles.css')
+
+  body
+    #my-info.sidebar
+      .sidebar-info-box
+        br
+        .thumbnail-box
+          img.thumbnail(src='/static/images/pro-pic.jpg', width='550' height='350' alt='')
+        .dev-intro-box
+
+          //- Name
+          h5 Renata
+
+          //- Description 
+          p Currently a student on my way to becoming a Full Stack JavaScript Developer. 
+
+          //- Adding path from '/about' route handler to the href below
+          a(href='/about') Learn More &rarr;
+
+    .wrapper
+      .header
+        .header-info-box
+          button#menu-icon.menu-icon(type='button' data-toggle='my-info')
+
+          //- Name —for the mobile layout
+          span Renata
+
+      block content
+
+  script(src='/static/js/script.js')

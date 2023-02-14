@@ -1,0 +1,45 @@
+extends layout.pug
+
+block content
+
+  nav.nav
+    a(href='/')
+      span &larr;
+      |  Back
+
+  article.portfolio-projects
+    .inner-wrapper.flex-row-wrap.two-col
+      .project-info-box.box
+
+        //- Using interpolation to dynamically add the project title
+        h1= project.project_name
+
+        //- Using interpolation to dynamically add the project description
+        p= project.description
+
+      .project-tech-links-box.box
+        h6 Technologies
+        ul
+          //- Using an `each` iterator and interpolation to dynamically replace the li tags with the technologies listed for this project
+          each tech in project.technologies
+            li= tech
+
+        //- Adding the href values to the links below
+        a.btn-link(href=`${project.live_link}`, target='_blank') Live Demo
+        a.btn-link(href=`${project.github_link}`, target='_blank') GitHub Repo
+
+    .project-img-box.box
+
+      //- Dynamically adding project images, and add descriptions to the alt attributes
+      if (project.image_urls[1])
+        img.project-img(src=`${project.image_urls[1]}`, alt='img_one')
+      if (project.image_urls[2])
+        img.project-img(src=`${project.image_urls[2]}`, alt='img_two')
+      if (project.image_urls[3])
+        img.project-img(src=`${project.image_urls[3]}`, alt='img_three')
+
+  //- Moved each line below (including this one) 1 SPACE towards the left to get top&bottom 'back' to align
+  nav.nav
+    a(href='/')
+      span &larr;
+      |  Back
