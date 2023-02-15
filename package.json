@@ -4,7 +4,9 @@
   "description": " Portfolio",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://renatak.github.io/arkstack/",
   "author": "",
@@ -13,5 +15,8 @@
     "express": "^4.18.2",
     "nodemon": "^2.0.20",
     "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
