@@ -5,8 +5,8 @@ const { projects } = data;
 
 //Setting the routes
 //An "index" route (/) to render the "Home" page 
-router.get('/arkstack', (req, res) => {
-    res.render('layout', { projects });
+router.get('/', (req, res) => {
+    res.render('index', { projects });
 });
 
 // An "about" route (/about) to render the "About" page 
