@@ -6,7 +6,7 @@ const { projects } = data;
 //Setting the routes
 //An "index" route (/) to render the "Home" page 
 router.get('/', (req, res) => {
-    res.render('index', { projects });
+    res.render('layout', { projects });
 });
 
 // An "about" route (/about) to render the "About" page 
