@@ -11,10 +11,6 @@ app.use('/static', express.static('public'));
 //setting “view engine” to “pug” 
 app.set('view engine', 'pug');
 
-var options = {
-  index: false
-}
-
 /* Importing route definitions */
 const projectRouter = require('./routes/index');
 
