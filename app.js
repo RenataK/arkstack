@@ -5,11 +5,14 @@ const express = require('express');
 
 const app = express();
 
+//setting “view engine” to “pug” 
+app.set('view engine', 'pug');
+
 //using a static route and the express.static method to serve the static files located in the public folder
 app.use('/static', express.static('public'));
 
-//setting “view engine” to “pug” 
-app.set('view engine', 'pug');
+// //setting “view engine” to “pug” 
+// app.set('view engine', 'pug');
 
 /* Importing route definitions */
 const projectRouter = require('./routes/index');
